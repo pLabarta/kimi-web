@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{{ page.title }} — {{ config.title }}</title>
+    <link rel="stylesheet" href="{{ get_url(path="main.css") }}">
+</head>
+<body>
+    {% include "partials/nav.html" %}
+
+    <main>
+        <div class="container">
+            <article class="section article article--{{ page.extra.accent }}">
+                <span class="article__tag">{{ page.extra.category | upper }}</span>
+                <h1 class="article__title">{{ page.title }}</h1>
+                <div class="article__body">
+                    {{ page.content | safe }}
+                </div>
+                {% set parent = get_section(path=page.ancestors[0]) %}
+                <a class="article__back" href="{{ parent.permalink }}">&larr; Back to {{ parent.title }}</a>
+            </article>
+        </div>
+    </main>
+
+    {% include "partials/footer.html" %}
+</body>
+</html>

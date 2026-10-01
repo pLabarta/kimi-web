@@ -1,5 +1,14 @@
 $spacing-section: 32px;
+$container-max-width: 1080px;
 
 .section {
     margin: $spacing-section 0;
+}
+
+.container {
+    width: 100%;
+    max-width: $container-max-width;
+    margin: 0 auto;
+    padding: 0 24px;
+    box-sizing: border-box;
 }

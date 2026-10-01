@@ -1,19 +1,23 @@
 <nav class="nav">
     <span class="nav__line"></span>
-    <div class="nav__section">
-        <ul class="nav__list nav__list--small">
-            <li>Placeholder text</li>
-            <li>Placeholder text</li>
-            <li>Placeholder text</li>
-        </ul>
+    <div class="nav__container">
+        <div class="nav__section">
+            <ul class="nav__list nav__list--small">
+                <li><a href="{{ get_url(path="") }}">Home</a></li>
+                <li>Placeholder text</li>
+                <li>Placeholder text</li>
+            </ul>
+        </div>
     </div>
     <span class="nav__line"></span>
-    <div class="nav__section">
-        <ul class="nav__list nav__list--bold">
-            <li>Placeholder text</li>
-            <li>Placeholder text</li>
-            <li>Placeholder text</li>
-        </ul>
+    <div class="nav__container">
+        <div class="nav__section">
+            <ul class="nav__list nav__list--bold">
+                <li><a href="{{ get_url(path="id") }}">ID</a></li>
+                <li><a href="{{ get_url(path="pm") }}">PM</a></li>
+                <li><a href="{{ get_url(path="av") }}">AV</a></li>
+            </ul>
+        </div>
     </div>
     <span class="nav__line"></span>
 </nav>

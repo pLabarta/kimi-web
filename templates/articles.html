@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{{ section.title }} — {{ config.title }}</title>
+    <link rel="stylesheet" href="{{ get_url(path="main.css") }}">
+</head>
+<body>
+    {% include "partials/nav.html" %}
+
+    <header class="header header--{{ section.extra.accent }} section">
+        <div class="container header__inner">
+            <div class="header__figure">
+                {% if section.extra.category == "id" %}
+                <svg class="header__shape header__shape--id" viewBox="0 0 72 72" width="72" height="72" aria-hidden="true">
+                    <polygon points="36,4 68,68 4,68" fill="none" style="stroke: var(--color-bauhaus-yellow)" stroke-width="8" stroke-linejoin="miter"/>
+                </svg>
+                {% else %}
+                <span class="header__shape header__shape--{{ section.extra.category }}"></span>
+                {% endif %}
+            </div>
+            <div class="header__content">
+                <h1>{{ section.title }}</h1>
+                <p class="header__text">{{ section.content | safe }}</p>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <div class="container">
+            <section class="section articles-section">
+                <div class="articles-grid">
+                    {% for page in section.pages %}
+                    <article class="articles-grid__card articles-grid__card--{{ section.extra.accent }}">
+                        <a class="articles-grid__link" href="{{ page.permalink }}">
+                            <div class="articles-grid__body">
+                                <span class="articles-grid__tag">{{ section.extra.category | upper }}</span>
+                                <h3 class="articles-grid__title">{{ page.title }}</h3>
+                                <p class="articles-grid__summary">{{ page.extra.summary }}</p>
+                            </div>
+                            <div class="articles-grid__image">
+                                <span class="articles-grid__shape articles-grid__shape--{{ section.extra.category }}"></span>
+                            </div>
+                        </a>
+                    </article>
+                    {% endfor %}
+                </div>
+            </section>
+        </div>
+    </main>
+
+    {% include "partials/footer.html" %}
+</body>
+</html>

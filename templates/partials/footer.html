@@ -1,3 +1,22 @@
-<footer>
-    <p>&copy; {{ now() | date(format="%Y") }} {{ config.title }}</p>
+<footer class="nav">
+    <span class="nav__line"></span>
+    <div class="nav__container">
+        <div class="nav__section">
+            <ul class="nav__list nav__list--small">
+                <li><a href="{{ get_url(path="") }}">Home</a></li>
+                <li>&copy; {{ now() | date(format="%Y") }} {{ config.title }}</li>
+            </ul>
+        </div>
+    </div>
+    <span class="nav__line"></span>
+    <div class="nav__container">
+        <div class="nav__section">
+            <ul class="nav__list nav__list--bold">
+                <li><a href="{{ get_url(path="id") }}">ID</a></li>
+                <li><a href="{{ get_url(path="pm") }}">PM</a></li>
+                <li><a href="{{ get_url(path="av") }}">AV</a></li>
+            </ul>
+        </div>
+    </div>
+    <span class="nav__line"></span>
 </footer>
