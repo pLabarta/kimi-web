@@ -1,0 +1,49 @@
+@use "typography" as *;
+
+.nav {
+    height: 80px;
+    box-sizing: border-box;
+    padding: 2px;
+    background-color: var(--color-bauhaus-yellow);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: stretch;
+    overflow: hidden;
+}
+
+.nav__section {
+    flex: 0 1 auto;
+    min-height: 0;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    align-items: center;
+}
+
+.nav__line {
+    flex: 0 0 auto;
+    height: 0;
+    border-top: 2px dotted var(--color-bauhaus-black);
+    margin: 0;
+}
+
+.nav__list {
+    display: flex;
+    align-items: center;
+    list-style: none;
+    font-family: $font-geist-mono;
+}
+
+.nav__list li:not(:first-child)::before {
+    content: "\00B7";
+    margin: 0 8px;
+}
+
+.nav__list--bold {
+    font-weight: 700;
+}
+
+.nav__list--small {
+    font-size: 16px;
+}

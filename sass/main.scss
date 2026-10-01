@@ -1,0 +1,18 @@
+@use "base";
+@use "tokens" as *;
+@use "fonts";
+@use "typography";
+@use "nav";
+@use "header";
+@use "carousel";
+@use "skills";
+
+:root {
+    --color-bauhaus-yellow: #{$bauhaus-yellow};
+    --color-bauhaus-red: #{$bauhaus-red};
+    --color-bauhaus-blue: #{$bauhaus-blue};
+    --color-bauhaus-white: #{$bauhaus-white};
+    --color-studio-white: #{$studio-white};
+    --color-concrete: #{$concrete};
+    --color-bauhaus-black: #{$bauhaus-black};
+}

@@ -1,0 +1,47 @@
+$font-geist: "Geist", system-ui, -apple-system, sans-serif;
+$font-geist-mono: "Geist Mono", ui-monospace, "SFMono-Regular", monospace;
+
+h1 {
+    font-family: $font-geist-mono;
+    font-weight: 700;
+    font-size: 40px;
+    text-transform: uppercase;
+}
+
+h2 {
+    font-family: $font-geist-mono;
+    font-weight: 700;
+    font-size: 32px;
+    text-align: center;
+    text-transform: uppercase;
+}
+
+h3 {
+    font-family: $font-geist-mono;
+    font-weight: 700;
+    font-size: 20px;
+}
+
+.destacado-1 {
+    font-family: $font-geist;
+    font-weight: 800;
+    font-size: 24px;
+}
+
+.destacado-2 {
+    font-family: $font-geist;
+    font-weight: 500;
+    font-size: 24px;
+}
+
+body {
+    font-family: $font-geist;
+    font-weight: 400;
+    font-size: 20px;
+}
+
+small {
+    font-family: $font-geist-mono;
+    font-weight: 500;
+    font-size: 20px;
+}

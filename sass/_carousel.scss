@@ -1,0 +1,56 @@
+@use "spacing" as *;
+
+.carousel__heading {
+    width: 60%;
+    margin: 0 auto $spacing-section;
+}
+
+.carousel-wrapper {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    width: 60%;
+    margin: 0 auto;
+}
+
+.carousel {
+    flex: 1;
+    overflow: hidden;
+    border: 2px solid var(--color-bauhaus-black);
+}
+
+.carousel__track {
+    display: flex;
+    transition: transform 0.3s ease;
+}
+
+.carousel__slide {
+    flex: 0 0 100%;
+    display: flex;
+}
+
+.carousel__panel {
+    flex: 1;
+    padding: 32px;
+}
+
+.carousel__panel--left {
+    background-color: var(--color-bauhaus-white);
+}
+
+.carousel__panel--right {
+    background-color: var(--color-bauhaus-black);
+    color: var(--color-bauhaus-white);
+    border-left: 2px solid var(--color-bauhaus-black);
+}
+
+.carousel__arrow {
+    flex: 0 0 auto;
+    background: none;
+    border: none;
+    padding: 0;
+    font-size: 24px;
+    line-height: 1;
+    color: var(--color-bauhaus-black);
+    cursor: pointer;
+}

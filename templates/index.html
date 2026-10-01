@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{{ config.title }}</title>
+    <link rel="stylesheet" href="{{ get_url(path="main.css") }}">
+</head>
+<body>
+    {% include "partials/nav.html" %}
+    {% include "partials/header.html" %}
+
+    <main>
+        {% include "partials/carousel.html" %}
+        {% include "partials/skills.html" %}
+    </main>
+
+    {% include "partials/footer.html" %}
+</body>
+</html>

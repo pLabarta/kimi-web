@@ -1,0 +1,71 @@
+@use "spacing" as *;
+
+.skills__heading {
+    width: 60%;
+    margin: 0 auto $spacing-section;
+    text-align: center;
+}
+
+.skills {
+    display: flex;
+    width: 60%;
+    margin: 0 auto;
+}
+
+.skills__item {
+    position: relative;
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.skills__brick {
+    position: absolute;
+    z-index: -1;
+}
+
+.skills__brick--bottom {
+    bottom: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 154px;
+    height: 38.5px;
+    background-color: var(--color-bauhaus-yellow);
+}
+
+.skills__brick--right {
+    top: 50%;
+    right: 30px;
+    transform: translateY(-50%);
+    width: 38.5px;
+    height: 154px;
+    background-color: var(--color-bauhaus-red);
+}
+
+.skills__dot {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 77px;
+    height: 77px;
+    border-radius: 50%;
+    background-color: var(--color-bauhaus-blue);
+    z-index: -1;
+}
+
+.skills__icon {
+    width: 154px;
+    height: 154px;
+    border-radius: 50%;
+    border: 2px solid var(--color-bauhaus-black);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.skills__icon h3 {
+    text-transform: uppercase;
+}
