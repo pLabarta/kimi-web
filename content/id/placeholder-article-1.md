@@ -1,5 +1,5 @@
 +++
-title = "Placeholder article one"
+title = "Placeholder article one modificado"
 date = 2026-01-01
 weight = 1
 
