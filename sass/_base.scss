@@ -15,6 +15,11 @@ ul {
 }
 
 body {
+    // Texture at 25% opacity: a 75% white veil laid over the image
+    background:
+        linear-gradient(rgba(255, 255, 255, 0.75), rgba(255, 255, 255, 0.75)),
+        url("js/img/texture1.avif") repeat,
+        var(--color-bauhaus-white);
     display: flex;
     flex-direction: column;
     min-height: 100vh;
