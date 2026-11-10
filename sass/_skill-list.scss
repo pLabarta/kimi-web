@@ -1,0 +1,97 @@
+@use "sass:list";
+@use "spacing" as *;
+@use "mixins" as *;
+
+$skill-gap: 1.2em;
+
+// Highlight colors per area: background and text on top of it
+$skill-areas: (
+    "id": (var(--color-bauhaus-yellow), var(--color-bauhaus-black)),
+    "pm": (var(--color-bauhaus-blue), var(--color-bauhaus-white)),
+    "av": (var(--color-bauhaus-red), var(--color-bauhaus-white)),
+    "sec": (var(--color-concrete), var(--color-bauhaus-white)),
+    "lang": (var(--color-bauhaus-black), var(--color-bauhaus-white)),
+);
+
+.skill-list__paper {
+    padding: $spacing-section 0;
+    @include full-bleed(var(--color-studio-white));
+}
+
+.skill-list__heading {
+    margin: $spacing-heading 0;
+}
+
+// Filter buttons, one per area
+.skill-filter {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 12px;
+    margin: 0 0 $spacing-section;
+}
+
+.skill-filter__button {
+    padding: 6px 14px;
+    border: none;
+    background: none;
+    color: var(--color-bauhaus-black);
+    font: inherit;
+    cursor: pointer;
+    transition: background-color 0.15s ease, color 0.15s ease;
+}
+
+// Wrapping list. Each pipe hangs in the gap before its item, so it never
+// trails a line end, and when the item starts a line it falls outside the
+// clipped list.
+.skill-list {
+    display: flex;
+    flex-wrap: wrap;
+    row-gap: 0.6em;
+    font-size: 20px;
+    overflow: hidden;
+    // Room for the highlight padding, which would otherwise be clipped
+    padding: 4px 0;
+    margin: -4px 0;
+    list-style: none;
+}
+
+.skill-list__item {
+    position: relative;
+    flex: 0 0 auto;
+    max-width: 100%;
+    margin-right: $skill-gap;
+    color: var(--color-concrete);
+    transition: color 0.15s ease, background-color 0.15s ease, box-shadow 0.15s ease;
+}
+
+.skill-list__item + .skill-list__item::before {
+    content: "|";
+    color: var(--color-concrete);
+    position: absolute;
+    left: -$skill-gap * 0.5;
+    transform: translateX(-50%);
+}
+
+// Per-area colors: a skill is highlighted on hover, or while its area's
+// filter is active (the section carries the active area in data-active), or
+// while its filter button is hovered.
+// The shadow pads the highlight without shifting the layout.
+@each $area, $colors in $skill-areas {
+    $bg: list.nth($colors, 1);
+    $fg: list.nth($colors, 2);
+
+    .skill-list__item[data-area="#{$area}"]:hover,
+    .skill-list-section[data-active="#{$area}"] .skill-list__item[data-area="#{$area}"],
+    .skill-list-section:has(.skill-filter__button[data-area="#{$area}"]:hover) .skill-list__item[data-area="#{$area}"] {
+        background-color: $bg;
+        box-shadow: 0 0 0 4px $bg;
+        color: $fg;
+    }
+
+    .skill-filter__button[data-area="#{$area}"]:hover,
+    .skill-filter__button[data-area="#{$area}"][aria-pressed="true"] {
+        background-color: $bg;
+        color: $fg;
+    }
+}

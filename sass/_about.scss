@@ -1,0 +1,39 @@
+@use "spacing" as *;
+
+.about__heading {
+    margin: $spacing-heading 0;
+}
+
+// Two columns, three rows: text/image, image/text, text/image
+.about {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: $spacing-section;
+    align-items: stretch;
+}
+
+.about__text {
+    align-self: center;
+    margin: 0;
+
+    p {
+        margin: 0 0 1em;
+    }
+
+    p:last-child {
+        margin-bottom: 0;
+    }
+}
+
+.about__image {
+    // Fills the height of the row set by the paragraph next to it
+    min-height: 240px;
+    background-color: var(--color-studio-white);
+    border: 2px solid var(--color-bauhaus-black);
+}
+
+@media (max-width: 700px) {
+    .about {
+        grid-template-columns: 1fr;
+    }
+}

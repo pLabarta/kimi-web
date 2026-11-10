@@ -2,40 +2,41 @@
 
 .skills__heading {
     width: 60%;
-    margin: 0 auto $spacing-section;
+    margin: $spacing-heading auto;
     text-align: center;
 }
 
 .skills {
     display: flex;
-    width: 60%;
+    justify-content: center;
+    align-items: center;
+    gap: 77px; // half the square width
+    width: 100%;
     margin: 0 auto;
 }
 
 .skills__item {
-    flex: 1;
+    flex: 0 0 auto;
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
-.skills__shape--id {
-    width: 0;
-    height: 0;
-    border-left: 77px solid transparent;
-    border-right: 77px solid transparent;
-    border-bottom: 133px solid var(--color-bauhaus-yellow);
+.skills__image {
+    height: 154px;
+    width: auto;
 }
 
-.skills__shape--pm {
-    width: 154px;
-    height: 154px;
-    border-radius: 50%;
-    background-color: var(--color-bauhaus-blue);
+// Optical size correction: circle and triangle look smaller than the
+// square at the same bounding box, so scale them up.
+.skills__image--pm {
+    height: 174px;
 }
 
-.skills__shape--av {
-    width: 154px;
-    height: 154px;
-    background-color: var(--color-bauhaus-red);
+.skills__image--id {
+    height: 174px;
+}
+
+.skills__link {
+    display: flex;
 }

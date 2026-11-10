@@ -1,0 +1,40 @@
+@use "spacing" as *;
+
+.fun-fact__heading {
+    margin: $spacing-heading 0;
+}
+
+.fun-fact {
+    padding: $spacing-section;
+    color: var(--color-bauhaus-black);
+    background-color: var(--color-bauhaus-yellow);
+}
+
+.fun-fact__intro {
+    margin: 0 0 $spacing-section;
+}
+
+.fun-fact__row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: $spacing-section;
+    align-items: stretch;
+}
+
+.fun-fact__image {
+    // Fills the height of the row set by the paragraph next to it
+    min-height: 240px;
+    background-color: var(--color-studio-white);
+    border: 2px solid var(--color-bauhaus-black);
+}
+
+.fun-fact__text {
+    align-self: center;
+    margin: 0;
+}
+
+@media (max-width: 700px) {
+    .fun-fact__row {
+        grid-template-columns: 1fr;
+    }
+}

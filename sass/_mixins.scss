@@ -1,0 +1,7 @@
+// Paints a background color that runs to the window edges while the content
+// stays inside the container (clip-path trims the vertical overflow)
+@mixin full-bleed($color) {
+    background-color: $color;
+    box-shadow: 0 0 0 100vmax $color;
+    clip-path: inset(0 -100vmax);
+}

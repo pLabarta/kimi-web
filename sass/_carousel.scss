@@ -1,15 +1,15 @@
 @use "spacing" as *;
 
 .carousel__heading {
-    width: 60%;
-    margin: 0 auto $spacing-section;
+    width: 100%;
+    margin: $spacing-heading auto;
 }
 
 .carousel-wrapper {
     display: flex;
     align-items: center;
     gap: 16px;
-    width: 60%;
+    width: 100%;
     margin: 0 auto;
 }
 
@@ -31,7 +31,8 @@
 
 .carousel__panel {
     flex: 1;
-    padding: 32px;
+    padding: 48px;
+    min-height: 360px;
 }
 
 .carousel__panel--left {

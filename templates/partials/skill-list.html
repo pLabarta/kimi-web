@@ -1,0 +1,24 @@
+{% set data = load_data(path="data/skills.json") %}
+<section class="section skill-list-section">
+    <h2 class="skill-list__heading">Core Skills &amp; Tools</h2>
+
+    <div class="skill-list__paper">
+        <div class="skill-filter destacado-1" role="group" aria-label="Filter skills by area">
+            {% for area in data.areas %}
+            <button type="button" class="skill-filter__button" data-area="{{ area.key }}" aria-pressed="false">{{ area.label }}</button>
+            {% endfor %}
+        </div>
+
+        <ul class="skill-list destacado-1">
+            {% for area in data.areas %}
+            {% for skill in data.skills %}
+            {% if skill.area == area.key %}
+            <li class="skill-list__item" data-area="{{ skill.area }}">{{ skill.name }}</li>
+            {% endif %}
+            {% endfor %}
+            {% endfor %}
+        </ul>
+    </div>
+</section>
+
+<script src="{{ get_url(path="js/skill-filter.js") }}" defer></script>
